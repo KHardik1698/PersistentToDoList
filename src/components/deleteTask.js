@@ -4,7 +4,7 @@ export const deleteTaskElement = (id) => {
   //   console.log("Getting the ID", findById(id));
   localArr.splice(findById(id), 1);
   localStorage.setItem("toDoListArr", JSON.stringify(localArr));
-  document.getElementById(id).remove();
+  document.getElementById(id).parentElement.remove();
 };
 
 let index;

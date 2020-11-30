@@ -3,6 +3,8 @@ import { updateStatus } from "./updateStatus.js";
 
 export const Task = (taskObject) => {
   const ul = document.getElementById("userList");
+  const div = document.createElement("div");
+  div.className = "task-container";
   const li = document.createElement("li");
   li.id = taskObject.taskId;
   li.innerHTML = taskObject.description;
@@ -18,9 +20,10 @@ export const Task = (taskObject) => {
   deleteTask.addEventListener("click", () => {
     deleteTaskElement(li.id);
   });
-  ul.appendChild(li);
-  li.appendChild(completeTask);
-  li.appendChild(deleteTask);
+  ul.appendChild(div);
+  div.appendChild(li);
+  div.appendChild(completeTask);
+  div.appendChild(deleteTask);
   return ul;
 };
 

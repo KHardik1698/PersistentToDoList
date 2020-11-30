@@ -20,6 +20,8 @@ export const viewLocalStorage = (taskObject) => {
 export const addList = (list) => {
   const ul = document.getElementById("userList");
   list.forEach((list) => {
+    const div = document.createElement("div");
+    div.className = "task-container";
     const li = document.createElement("li");
     // console.log(list);
     li.id = list.taskId;
@@ -38,9 +40,10 @@ export const addList = (list) => {
     deleteTask.addEventListener("click", () => {
       deleteTaskElement(li.id);
     });
-    ul.appendChild(li);
-    li.appendChild(completeTask);
-    li.appendChild(deleteTask);
+    ul.appendChild(div);
+    div.appendChild(li);
+    div.appendChild(completeTask);
+    div.appendChild(deleteTask);
     return ul;
   });
   //   localStorage.clear();
