@@ -36,10 +36,10 @@ export const isSpecialCharacter = (string) => {
 const Validator = [isStringEmpty, isSpecialCharacter];
 
 export const isInputValid = (string) => {
-  Validator.forEach((validator) => {
-    validator(string);
-  });
-  // return Validator.every((fun) => {
-  //   return fun(string);
+  // return Validator.forEach((validator) => {
+  //   return validator(string);
   // });
+  return Validator.every((validator) => {
+    return validator(string);
+  });
 };
