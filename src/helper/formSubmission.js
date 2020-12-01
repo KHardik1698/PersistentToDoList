@@ -22,7 +22,6 @@ export const formSubmission = (event) => {
     localArr.push(taskObject);
     Task(taskObject);
     event.target.taskInput.value = "";
-    // console.log(toDoList);
     addLocalStorage(localArr);
   }
   // document

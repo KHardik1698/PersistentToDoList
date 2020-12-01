@@ -10,20 +10,19 @@ export const addLocalStorage = (taskObject) => {
 
 export const viewLocalStorage = (taskObject) => {
   let list = JSON.parse(localStorage.getItem("toDoListArr"));
-  // console.log(list);
   list.forEach((list) => {
     localArr.push(list);
   });
   addList(list);
   return list;
 };
+
 export const addList = (list) => {
   const ul = document.getElementById("userList");
   list.forEach((list) => {
     const div = document.createElement("div");
     div.className = "task-container";
     const li = document.createElement("li");
-    // console.log(list);
     li.id = list.taskId;
     li.innerHTML = list.description;
     li.classList.add(list.class);

@@ -26,8 +26,3 @@ export const Task = (taskObject) => {
   div.appendChild(deleteTask);
   return ul;
 };
-
-// taskObject = {
-//   taskId: "unique id",
-//   description: "",
-// };
