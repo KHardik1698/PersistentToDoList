@@ -1,21 +1,45 @@
 export const isStringEmpty = (string) => {
-  return true;
+  if (string.length == 0) {
+    window.alert("Enter a Task");
+    return false;
+  } else return true;
 };
 
-export const isMarkup = (string) => {
-  return true;
+const SpecialCharacters = [
+  "$",
+  "^",
+  "`",
+  "~",
+  "_",
+  "|",
+  "{",
+  "}",
+  "[",
+  "]",
+  "<",
+  ">",
+];
+
+export const isSpecialCharacter = (string) => {
+  let result = true;
+  SpecialCharacters.forEach((validator) => {
+    if (string.includes(validator)) {
+      result = false;
+    }
+  });
+  if (result == false) {
+    window.alert("Enter a Valid Input without Special Characters");
+  }
+  return result;
 };
 
-const Validator = [isStringEmpty, isMarkup];
+const Validator = [isStringEmpty, isSpecialCharacter];
 
 export const isInputValid = (string) => {
-  //   isStringEmpty(string);
-  //   isMarkup(string);
-  return isStringEmpty(string) && isMarkup(string);
-  //   Validator.forEach((validator) => {
-  //     validator(string);
-  //   });
-  //   return Validator.every((fun) => {
-  //     return fun();
-  //   });
+  Validator.forEach((validator) => {
+    validator(string);
+  });
+  // return Validator.every((fun) => {
+  //   return fun(string);
+  // });
 };
