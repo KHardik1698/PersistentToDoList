@@ -1,19 +1,89 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#heading {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 80%;
+  margin: 3vh auto;
+  padding: 3vh;
+}
+
+#formDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 5vh;
+  width: 80%;
+  margin: 3vh auto;
+  padding: 3vh;
+}
+
+#taskInput {
+  background-color: black;
+  color: rgb(145, 203, 221);
+  border: none;
+  font-size: 5vh;
+  width: 30%;
+  height: 7vh;
+  box-sizing: border-box;
+}
+
+#formDiv label {
+  margin: auto 0px;
+}
+
+#formDiv button {
+  width: 8vw;
+  height: 7vh;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
 #userList {
-  background-color: cyan;
-  padding: 20px;
+  background-color: rgb(145, 203, 221);
+  padding: 5vh;
+  font-size: 4vh;
+  width: 80%;
+  margin: auto;
 }
 
 .task-container li {
-  padding: 10px;
-  width: 100px;
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
+  padding: 1.5vh;
+  width: 40vw;
+  box-sizing: border-box;
 }
 
 .task-container button {
-  width: 100px;
+  width: 15vh;
+  height: 7.5vh;
+  border: 2px solid black;
+  background-color: rgb(145, 203, 221);
+  box-sizing: border-box;
+}
+
+li {
+  background-color: black;
+  color: white;
 }
 
 .strike {
   text-decoration: line-through;
+  background-color: black;
+  color: red;
+}
+
+.no-strike {
+  background-color: black;
+  color: white;
 }
 
 .task-container {
@@ -21,5 +91,39 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
+  padding: 2vh;
+}
+
+@media (max-width: 768px) {
+  #heading {
+    font-size: 4vh;
+  }
+  #formDiv {
+    flex-direction: column;
+    font-size: 3vh;
+  }
+  #formDiv label {
+    font-size: 5vh;
+  }
+  #taskInput {
+    font-size: 4vh;
+    width: 50%;
+    margin: auto;
+  }
+  #formDiv button {
+    font-size: 3vh;
+    width: 50%;
+    margin: auto;
+  }
+  .task-container {
+    flex-direction: column;
+  }
+  .task-container li {
+    width: 100%;
+    text-align: center;
+  }
+  .task-container button {
+    width: 100%;
+    font-size: 3vh;
+  }
 }

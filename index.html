@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
+    <title>Persistent To Do List</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
     <script src="./src/main.js" type="module"></script>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <h1>To Do List</h1>
-    <form action="" name="userInput">
-      <label for="taskInput">Enter your Task</label>
-      <input type="text" name="taskInput" id="taskInput" />
-      <button>Add Task</button>
-      <button type="reset">Clear</button>
+    <h1 id="heading">Persistent To Do List</h1>
+    <form action="" name="userInput" autocomplete="off">
+      <div id="formDiv">
+        <label for="taskInput">Enter your Task</label>
+        <input type="text" name="taskInput" id="taskInput" />
+        <button>Add Task</button>
+        <button type="reset">Clear</button>
+      </div>
     </form>
     <div>
       <ul id="userList"></ul>
