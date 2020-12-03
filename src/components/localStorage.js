@@ -10,10 +10,12 @@ export const addLocalStorage = (taskObject) => {
 
 export const viewLocalStorage = (taskObject) => {
   let list = JSON.parse(localStorage.getItem("toDoListArr"));
-  list.forEach((list) => {
-    localArr.push(list);
-  });
-  addList(list);
+  if (list !== null) {
+    list.forEach((list) => {
+      localArr.push(list);
+    });
+    addList(list);
+  }
   return list;
 };
 
